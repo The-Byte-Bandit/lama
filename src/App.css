@@ -1,0 +1,57 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+    color: black;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+  }
+
+  .active .arr{
+    visibility: visible;
+  }
+    
+  .active .cgrey{
+    filter: grayscale(0%);
+    opacity: 100%;
+  }
+  
+  .cgrey{
+    filter: grayscale(100%);
+    opacity: 60%;
+  }
+
+  .arr{
+    visibility: hidden;
+  }
+
+  .slogoutbtn{
+    transition: 0.3s;
+  }
+  .slogoutbtn:hover{
+    background-color: red;
+    color: white;
+  }
+  .btx{
+    transition: 0.3s;
+  }
+  .btx:hover
+  {
+    background-color:#8113DD;
+    color: white;
+  }
+  .fadein{
+    animation: fadein 0.4s ease-in;
+  }
+
+  @keyframes fadein {
+    0%{
+      opacity: 0%;
+    }
+    100%{
+      opacity: 100%;
+    }
+  }
