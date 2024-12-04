@@ -7,11 +7,6 @@ import AddProductBtn from '../Components/addProductBtn';
 import SmallCard from '../Components/smallCard';
 import MediumCard from '../Components/mediumCard';
 import VerticalCard from '../Components/verticalCard';
-// import MediumCardTwo from '../Components/mediumCardTwo';
-// import LargeCardOne from '../Components/largeCardOne';
-// import CreditCardHolder from '../Components/creditCardHolder';
-// import AddAccountCard from '../Components/addAccountCard';
-
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';

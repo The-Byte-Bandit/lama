@@ -11,27 +11,21 @@ function Products() {
   return (
     <div className={`${styles.paddingMain}  w-[100%] h-full flex flex-col justify-between`}>
       <div className='flex flex-col flex-1 [w-100%]  gap-[16px] '>
-        <div className='flex flex-row gap-[8px]   max-h-[300px] 2xl:flex-1'>
-          <div className='flex flex-1'>
+        <div className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6 mb-6'>
             <SmallCard
               heading = "Total Product"
               percentage = {false}
             />
-          </div>
           
-          <div className='flex flex-1'>
             <SmallCard
               heading = "Out of Stock"
               percentage = {false}
             />
-          </div>
           
-          <div className='flex flex-1'>
             <SmallCard
               heading = "Recently Added"
               percentage = {false}
             />
-          </div>
           
         </div>
 
