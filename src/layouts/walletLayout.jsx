@@ -13,7 +13,7 @@ function WalletLayout() {
 
 
   return (
-    <div className={`fadein h-full w-[100%]  bg-backgroundGrey `}>
+    <div className={`fadein w-[100%] h-full min-h-screen bg-backgroundGrey `}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
         <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>

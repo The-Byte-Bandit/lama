@@ -37,10 +37,10 @@ function HomeLayout() {
 
     return (
         <div className='fadein homeLayout flex flex-row flex-1 w-[100%] h-full'>
-            <div ref={ref} className='sideLayout fixed top-0 left-0 overflow-hidden flex-1 max-w-[19%] z-10 h-full'>
+            <div ref={ref} className='hidden md:flex sideLayout fixed top-0 left-0 overflow-hidden flex-1 max-w-[19%] z-10 h-full'>
                 <SideNav/>
             </div>
-            <div className='mainLayout w-[100%]' style={{ marginLeft: `${size.width}px` }}>
+            <div className='mainLayout w-[100%] h-full min-h-screen' style={{ marginLeft: `${size.width}px` }}>
                 <Outlet/>
             </div>
         </div>

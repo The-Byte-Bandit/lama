@@ -4,7 +4,7 @@ import {searchIcon } from '../constants/constant';
 function CsearchIcon() {
   return (
     <div>
-        <div className='py-[10px] px-[10px]'>
+        <div className='hidden md:block py-[10px] px-[10px]'>
         <img src={searchIcon} alt='search'/>
         </div>
     </div>

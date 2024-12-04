@@ -165,7 +165,7 @@ const months=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
     <div className={`flex flex-row  w-full justify-between items-center`}>
       <div className='flex flex-col flex-1'>
         <div>
-          <h5 className={`inter font-medium text-[32px] text-text-main-900`}>
+          <h5 className={`inter font-medium text-[16px] md:text-[32px] text-text-main-900`}>
             ₦94,127
           </h5>
         </div>
@@ -183,7 +183,7 @@ const months=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
       </div>
 
       <div className=' ml-auto '> 
-        <div className='flex flex-row gap-[8px] '>
+        <div className='flex flex-col md:flex-row gap-[8px] '>
           {
             payload.map((entry, index) => (
               <div key={`item-${index}`} className='text-[#878787] flex flex-row items-center gap-[4px]'>
@@ -230,7 +230,7 @@ const months=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oc
 }
 
 LineChartComponent.propTypes = {
-  chartData: PropTypes.arrayOf(PropTypes.number)  // if it's an array of numbers
+  chartData: PropTypes.arrayOf(PropTypes.number)
 };
 
 

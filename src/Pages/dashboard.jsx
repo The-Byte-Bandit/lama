@@ -25,7 +25,7 @@ function Dashboard() {
     <div className={`${styles.paddingMain} w-[100%] max-w-screen bg-backgroundGrey`}>
       <div className='flex flex-col  flex-1 sticky w-[100%] h-full'>
         <div className='items-center justify-between  '>
-          <div className='flex flex-1 justify-between border-b  gap-[12px] pb-[16px] border-stroke-soft-200 '>
+          <div className='flex-col md:flex-row flex flex-1 justify-between border-b  gap-[12px] pb-[16px] border-stroke-soft-200 '>
             <div className='flex flex-col gap-[4px]'>
                 <h3 className={`${typography.labelLarge}`}>Dashboard</h3>
                 <p className={`${typography.paragraphSmall}`}>{dashboardHeadingMessage}</p>
@@ -103,48 +103,48 @@ function Dashboard() {
 
 
       <div className={` flex flex-col  gap-[16px] w-full`}>
-          <div className={`grid grid-cols-3 gap-[16px] justify-between w-full`}>
+          <div className={`grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6 mb-6`}>
 
     {/* <div className={`${styles.paddingMain} flex flex-row flex-1 gap-[20px]`}> */}
-            <div className='col-span'>
+            {/* <div className='col-span'> */}
               <SmallCard
                   heading= "Total Sales"
                   amount= {cardState.totalSales}
                   difference = {cardState.totalSalesDifference}
                   percentage = {true}
                 />
-            </div>
+            {/* </div> */}
 
-            <div className='col-span'>
+            {/* <div className='col-span'> */}
               <SmallCard
                   heading = "Total Order"
                   amount = {cardState.totalOrders}
                   difference = {cardState.totalOrdersDifference}
                   percentage = {true}
                 />
-            </div>
+            {/* </div> */}
 
-            <div className='col-span'>
+            {/* <div className='col-span'> */}
               <SmallCard
                   heading = "Store Visit"
                   amount = {cardState.storeVisists}
                   difference = {cardState.storeVisistsDifference}
                   percentage = {true}
               />
-              
-            </div>
+{/*               
+            </div> */}
           {/* </div> */}
 
           </div>
 
-          <div className={` flex flex-row  gap-[16px] justify-between w-full` }>
-            <div className='w-[70%] flex flex-1'>
+          <div className={` grid grid-cols-1 lg:grid-cols-3 gap-6` }>
+            <div className='flex md:col-span-2'>
               <MediumCard
               type = "orders"
               />
                 
             </div>
-            <div className='w-[34%]' >
+            <div className='' >
               <VerticalCard
               type = "topProduct"
               />
@@ -153,15 +153,15 @@ function Dashboard() {
 
           </div>
 
-          <div className={` flex flex-row  gap-[16px] w-[100%]`}>
-            <div className='w-[34%] flex flex-1' >
+          <div className={` grid grid-cols-1 lg:grid-cols-3 gap-6`}>
+            <div className='' >
               <VerticalCard
-              type = "topProduct"
+              type = "earningCategory"
               />
 
             </div>
 
-            <div className='w-[70%]'>
+            <div className=' md:col-span-2'>
               <MediumCard
               type = "transactions"
               />

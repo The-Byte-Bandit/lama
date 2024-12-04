@@ -9,7 +9,7 @@ function TopNav() {
   return (
     <div className='font-inter flex flex-row flex-1 w-[100%] '>
       <div className='bg-neutrals-white-50 flex flex-1 flex-row justify-between items-center px-[16px] py-[12px]'>
-        <div className='flex gap-[14px] items-center flex-1'>
+        <div className='hidden md:flex gap-[14px] items-center flex-1'>
           <div className='flex'>
             <img src={userProfile[0].profilePricture} alt={userProfile[0].userName} />
           </div>
@@ -18,11 +18,11 @@ function TopNav() {
             <h3 className={`${typography.paragraphSmall}`}>{vendorWelcomeMessage}</h3>
           </div>
         </div>
-        <div className=' flex' >
-        <div className='flex gap-[12px]'>
-          <CsearchIcon/>
-          <CnotificationIcon/>
-          <CinboxIcon/>
+        <div className='ml-auto ' >
+          <div className='flex gap-[12px]'>
+            <CsearchIcon/>
+            <CnotificationIcon/>
+            <CinboxIcon/>
           </div>
         </div>
       </div>

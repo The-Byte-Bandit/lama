@@ -22,24 +22,41 @@ function MediumCard(props) {
   // }, [toggleTransaction]);
 
   const cardType = props.type.toLowerCase()
+  const titles = {
+    orders: 'Recent Orders',
+    transactions: 'Recent Transactions',
+    trendlist: 'Sales Trend',
+    linechart: 'Sales Trend',
+    transactionhistory: 'Transaction History',
+  };
+  
+  const title = titles[cardType] || '';
+  
+  // const title = (() => {
+  //   switch (cardType) {
+  //     case 'orders':
+  //       return 'Recent Orders';
+  //     case 'transactions':
+  //       return 'Recent Transactions';
+  //     case 'trendlist':
+  //       return 'Sales Trend';
+  //     case 'linechart':
+  //       return 'Sales Trend';
+  //     case 'transactionhistory':
+  //       return 'Transaction history';
+  //     default:
+  //       return '';
+  //   }
+  // })();
 
-  const title = (() => {
-    switch (cardType) {
-      case 'orders':
-        return 'Recent Orders';
-      case 'transactions':
-        return 'Recent Transactions';
-      case 'trendlist':
-        return 'Sales Trend';
-      case 'linechart':
-        return 'Sales Trend';
-      case 'transactionhistory':
-        return 'Transaction history';
-      default:
-        return '';
-    }
-  })();
-
+const renderEmptyState = (message, imgSrc) => (
+  <div className="w-full h-[248px] flex items-center">
+    <div className="flex flex-col w-full justify-center items-center">
+      <img src={imgSrc} alt="empty" className="mb-4" />
+      <h3 className={`${typography.paragraphSmall} text-center text-text-soft-400`}>{message}</h3>
+    </div>
+  </div>
+);
 
 
 
@@ -49,7 +66,7 @@ function MediumCard(props) {
         <div className='flex flex-1 flex-row max-h-[32px]'>
           <div className='flex flex-row gap-[3px] justify-center items-center max-w-[567px]'>
             <div><img src={clock} alt='clock' className='w-[75%]' /></div>
-            <h3 className={`${typography.labelMedium}`}>{title}
+            <h3 className={`${typography.labelMedium} `}>{title}
             </h3>
           </div>
           <div className='ml-auto'><DurationBtn /></div>
@@ -97,18 +114,21 @@ function MediumCard(props) {
                           <div>
                             <img src={items.icon} alt='icon'/>
                           </div>
-                          <div className='flex flex-col  max-w-[529px] h-[44px] '>
-                            <h5 className={`${typography.labelSmall} text-text-main-900`}>
+                          <div className='flex flex-col  max-w-[529px] h-[44px] truncate '>
+                            <h5 className={`${typography.labelSmall} text-text-main-900 truncate`}>
                               {items.transaction}
                             </h5>
-                            <p className={`${typography.paragraphXSmall}`}>
-                              {items.description}
-                            </p>
+                            <div className='truncate'>
+                              <p className={`${typography.paragraphXSmall} truncate`}>
+                                {items.description}
+                              </p>
+                            </div>
+                           
                           </div>
 
                           <div className='flex flex-col ml-auto max-w-[74px] gap-[4px] text-right '>
                             <h5 className={`${typography.paragraphSmall} truncate`} >₦{items.amount.toLocaleString()}</h5>
-                            <p className={`${typography.paragraphXSmall}`}>{items.date} </p>
+                            <p className={`${typography.paragraphXSmall} truncate`}>{items.date} </p>
                           </div>
 
                           <div>
@@ -188,11 +208,11 @@ function MediumCard(props) {
             <div className='flex flex-col h-full justify-between'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex flex-1 items-center gap-[10px]  max-h-[75px] 2xl:max-h-[105px]  mt-[0px] px-[12px] border-b border-stroke-soft-200'>
-                  <div className='flex flex-col gap-[6px] '>
-                    <p className={`${typography.paragraphSmall}`}>
+                  <div className='flex flex-col gap-[6px] truncate'>
+                    <p className={`${typography.paragraphSmall} truncate`}>
                       {item.userName}
                     </p>
-                    <p className={`${typography.paragraphXSmall}`}>
+                    <p className={`${typography.paragraphXSmall} truncate`}>
                       {item.email}
                     </p>
                   </div>
@@ -213,7 +233,7 @@ function MediumCard(props) {
             <div className='flex flex-1 flex-col justify-between h-full'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex flex-1  px-[12px] items-center max-h-[75px] 2xl:max-h-[105px]  mt-[0px] border-b border-stroke-soft-200'>
-                  <div className='flex max-w-[85px]'>
+                  <div className='flex max-w-[85px] truncate'>
                     <h5 className={`${typography.labelSmall} text-text-main-900 truncate`}>
                       ₦{item.amount.toLocaleString()}
                     </h5>
@@ -235,7 +255,7 @@ function MediumCard(props) {
             <div className='flex flex-1 flex-col justify-between h-full'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex items-center flex-1  max-h-[75px] 2xl:max-h-[105px] mt-[0px] border-b border-stroke-soft-200  py-[4px]'>
-                  <div className='flex flex-row py-[4px] px-[3px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200  ml-[8px]'>
+                  <div className='flex flex-row py-[4px] px-[3px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200  md:ml-[8px]'>
                     <div>
                       {item.status === "Pending" && <img src={orangeSatusIcon} alt='pending'/> || item.status === "Shipped" && <img src={yellowSatusIcon} alt='shipped'/> || item.status === "Delivered" && <img src={greenSatusIcon} alt='delivered'/> }
                     </div>
@@ -614,9 +634,10 @@ function MediumCard(props) {
   );
 }
 
-MediumCard.propTypes = {
-  type: PropTypes.string.isRequired  // Adjust this if `type` is optional
+MediumCard.defaultProps = {
+  type: 'defaultType',
 };
+
 
 
 export default MediumCard;

@@ -1,4 +1,3 @@
-
 import styles from '../style';
 import SmallCard from '../Components/smallCard';
 import MediumCard from '../Components/mediumCard';
@@ -8,61 +7,53 @@ import ExpenseCard from '../Components/expenseCard';
 import { useSelector } from 'react-redux';
 
 function Wallet() {
-  const cardState = useSelector((state)=> state.sales)
+  const cardState = useSelector((state) => state.sales);
 
   return (
-    <div className={`${styles.paddingMain} flex  flex-1 flex-col w-[100%] `}>
-      <div className='flex flex-col flex-1 [w-100%] gap-[16px] '>
-        <div className={`flex-1   flex flex-row gap-[16px] justify-between `}>
-            <div className={`flex flex-col gap-[16px] w-[100%]`}>
-              <div className={`flex flex-row flex-1 lg:max-h-[158px] 2xl:max-h-[300px]  justify-between gap-[24px]`}>
-                <div className='w-[100%]  flex flex-1'>
-                  <SmallCard
-                      heading= "Total Revenue"
-                      amount= {cardState.totalSales}
-                      difference = {cardState.totalSalesDifference}
-                      percentage = {false}
-                    />
-                </div>
-
-                <div className='w-[100%] h-full flex flex-1'>
-                  <SmallCard
-                      heading = "Average Order Values"
-                      amount = {cardState.totalOrders}
-                      difference = {cardState.totalOrdersDifference}
-                      percentage = {false}
-                    />
-                </div>
-
-              </div>
-
-              <div className='h-full flex flex-1 w-full'>
-                <MediumCard
-                  type = "orders"
-                />
-
-              </div>
+    <div className={`${styles.paddingMain} flex flex-col w-full min-h-full`}>
+      <div className="flex flex-col flex-1 w-full gap-6">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+          {/* Left Column */}
+          <div className="md:col-span-2 flex flex-col gap-6">
+            {/* Small Cards Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <SmallCard
+                heading="Total Revenue"
+                amount={cardState.totalSales}
+                difference={cardState.totalSalesDifference}
+                percentage={false}
+              />
+              <SmallCard
+                heading="Average Order Values"
+                amount={cardState.totalOrders}
+                difference={cardState.totalOrdersDifference}
+                percentage={false}
+              />
             </div>
 
-          <div className='w-[45%] flex flex-col gap-[25px] h-full justify-between'>
-            <div className='w-[100%] flex flex-1'>
-              <CreditCardHolder/>
-            </div>
-
-            <div className='w-[100%] flex flex-1'>
-              <BankCard/>
-            </div>
-
-            <div className='w-[100%] flex flex-1'>
-              <ExpenseCard/>
+            {/* Medium Card Section */}
+            <div className="w-full h-full flex ">
+              <MediumCard type="orders" />
             </div>
           </div>
-        </div>         
+
+          {/* Right Column */}
+          <div className="flex flex-col gap-6 h-full">
+            <div className="w-full">
+              <CreditCardHolder />
+            </div>
+            <div className="w-full flex 2xl:h-full">
+              <BankCard />
+            </div>
+            <div className="w-full flex 2xl:h-full">
+              <ExpenseCard />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Wallet
-
-
+export default Wallet;

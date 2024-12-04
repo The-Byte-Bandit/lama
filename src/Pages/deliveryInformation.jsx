@@ -43,7 +43,7 @@ const DeliveryInformation = ({currentStep, totalSteps, handleNext, handleBack}) 
   
 
   return (
-    <div className='w-[605px] h-[528px] flex flex-1 gap-0'>
+    <div className='md:w-[605px] h-full md:h-[528px] flex flex-1 p-6 md:p-0'>
       <Formik
         initialValues={{
           weight: '',

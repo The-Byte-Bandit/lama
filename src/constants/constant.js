@@ -333,7 +333,7 @@ export const customer = [
             transaction: "Salary Deposit",
             description: "Monthly salary Apex Wallet",
             amount: 35000.00,
-            date: "Sep 18 2024",
+            date: "Sep 18",
             icon: salaryIcon,
         },
 
@@ -342,7 +342,7 @@ export const customer = [
             transaction: "Stock Dividend",
             description: "Payment from stock investments.",
             amount: 846.14,
-            date: "Sep 18 2024",
+            date: "Sep 18",
             icon: stocksIcon,
         },
         {
@@ -350,7 +350,7 @@ export const customer = [
             transaction: "Rental Income",
             description: "Rental payment from Mr. Dudley.",
             amount: 100000.00,
-            date: "Sep 17 2024",
+            date: "Sep 17",
             icon: rentIcon,
         },
         {
@@ -358,7 +358,7 @@ export const customer = [
             transaction: "Refund from Amazon",
             description: "Refund of Order No #124235",
             amount: 35000000000.24,
-            date: "Sep 17 2024",
+            date: "Sep 17",
             icon: amazonIcon
         },
         {
@@ -366,7 +366,7 @@ export const customer = [
             transaction: "Payment",
             description: "Product purchase",
             amount: 50000000000.25,
-            date: "Sep 16 2024",
+            date: "Sep 16",
             icon: md_otherIcon,
         },
         {
@@ -374,7 +374,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Friend repayment",
             amount: 75000000.80,
-            date: "Sep 16 2024",
+            date: "Sep 16",
             icon: md_otherIcon,
         },
         {
@@ -382,7 +382,7 @@ export const customer = [
             transaction: "Payment",
             description: "Utility bill",
             amount: 1200000000000.00,
-            date: "Sep 15 2024",
+            date: "Sep 15",
             icon: md_otherIcon,
         },
 
@@ -393,7 +393,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Family support",
             amount: 10000.00,
-            date: "Sep 18 2024",
+            date: "Sep 18",
             icon: md_otherIcon,
         },
         {
@@ -401,7 +401,7 @@ export const customer = [
             transaction: "Payment",
             description: "Credit card bill",
             amount: 200.50,
-            date: "Sep 18 2024",
+            date: "Sep 18",
             icon: md_otherIcon,
         },
         {
@@ -409,7 +409,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Loan repayment",
             amount: 15000.00,
-            date: "Sep 17 2024",
+            date: "Sep 17",
             icon: md_otherIcon,
         },
         {
@@ -417,7 +417,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Gift to friend",
             amount: 800000000,
-            date: "Sep 16 2024",
+            date: "Sep 16",
             icon: md_otherIcon,
         },
     ],
@@ -427,7 +427,7 @@ export const customer = [
             transaction: "Payment",
             description: "Online purchase",
             amount: 800.00,
-            date: "Sep 18 2024",
+            date: "Sep 18",
             icon: md_otherIcon,
         },
         {
@@ -435,7 +435,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Rent payment",
             amount: 300000.00,
-            date: "Sep 17 2024",
+            date: "Sep 17  ",
             icon: md_otherIcon,
         },
         {
@@ -443,7 +443,7 @@ export const customer = [
             transaction: "Payment",
             description: "Subscription fee",
             amount: 25000000.00,
-            date: "Sep 17 2024",
+            date: "Sep 17",
             icon: md_otherIcon,
         },
         {
@@ -451,7 +451,7 @@ export const customer = [
             transaction: "Transfer",
             description: "Gift to friend",
             amount: 15000000.00,
-            date:"Sep 16 2024",
+            date:"Sep 16",
             icon: md_otherIcon,
         },
     ]

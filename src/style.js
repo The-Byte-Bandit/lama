@@ -1,11 +1,11 @@
 export const typography = {
   paragraphSmall: "inter text-[13px] font-normal leading-[20px] ",
-  paragraphXSmall: "inter text-[12px] font-normal leading-[16px] text-left",
-  paragraphMedium: "Inter text-[16px] text-normal leading-[24px] tracking-paragraphMedium text-left",
+  paragraphXSmall: "inter text-[12px] font-normal leading-[16px] md:text-left",
+  paragraphMedium: "Inter text-[11px] md:text-[16px] text-normal leading-[24px] tracking-paragraphMedium text-left",
 
   labelLarge:" inter text-[18px] font-medium leading-[24px] tracking-tracking-paragraphLarge text-left",
   labelSmall: "inter text-[13px] font-medium leading-[20px] tracking-tracking-paragraphSmall ",
-  labelXSmall: "Inter text-[12px] font-medium leading-[16px] text-left",
+  labelXSmall: "Inter text-[11px] md:text-[12px] font-medium leading-[16px] text-left",
   labelMedium: "inter text-[14px] font-medium leading-[24px] tracking-paragraphMedium text-left text-text-main-900",
   labelXLarge: "Inter text-[24px] font-medium leading-[32px] tracking-labelXLarge text-center",
 
