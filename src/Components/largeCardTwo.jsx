@@ -100,56 +100,88 @@ function LargeCardTwo() {
 
 
   return (
-    <div className='max-w-[1901px] max-h-[2000px] flex flex-1 flex-col'>
+    <div className='md:max-w-[1901px] max-h-[2000px] flex md:flex-1 flex-col'>
         <div className='md:hidden flex w-full h-full'>
-            {products &&(
-                <div className='flex flex-col '>
-                    {products.slice(page * 7 - 7, page * 7).map((items, index)=>{
-                        return(
-                            <div key={index} className='flex flex-row'>
-                                <div>
-                                    <div className='flex flex-row h-[56px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] '>
-                                        <div>
-                                            <img src={items.icon} alt='icon'/>
-                                        </div>
+        {products && (
+      <div className="flex flex-col w-full">
+        {products.slice(page * 7 - 7, page * 7).map((items, index) => (
+          <div key={items.id || index} className="flex flex-row gap-6">
+            <div className="flex flex-row h-[56px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px]">
+              <div>
+                <img src={items.icon} alt={`Icon for ${items.productName}`} />
+              </div>
+            </div>
 
-                                    </div>
-                                </div>
-                                <div>                                        <div className='flex flex-col  max-w-[529px] h-[44px] '>
-                                            <h5 className={`${typography.labelSmall} text-text-main-900`}>
-                                                {items.productName}
-                                            </h5>
-                                            <h5 className={`${typography.labelSmall} text-text-main-900`}>
-                                                            ₦{items.productPrice}
-                                            </h5>
-                                            {/* {items.productCategory[0].map((category, categoryIndex) => (
-                                                            <div key={categoryIndex} style={{ color: category.fontColor ,  backgroundColor: category.bgColor }} className='h-[20px] py-[2px] px-[8px] rounded-[999px] flex  justify-center items-center'>
-                                                                <h5  className={`${typography.labelXSmall} flex flex-row justify-center items-center`} >
-                                                                    {category.name}
-                                                                </h5>
-                                                            </div>
-                                                        
-                                                        ))} */}
-                                                        <div>
-                                                        <div className='flex flex-row max-w-[104px] py-[4px] px-[2px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200 '>
+
+              <div className=" flex-col">
+                <div>
+                    <h5 className={`${typography.paragraphSmall} text-text-main-900`}>
+                    {items.productName}
+                    </h5>
+                </div>
+                
+                <div>
+                    <h5 className={`${typography.labelSmall} text-text-main-900`}>
+                    ₦{items.productPrice}
+                    </h5>
+                </div>
+                
+                
+                {/* Categories */}
+                {/* {items.productCategory[0]?.map((category, categoryIndex) => (
+                  <div
+                    key={categoryIndex}
+                    style={{
+                      color: category.fontColor,
+                      backgroundColor: category.bgColor
+                    }}
+                    className="h-[20px] py-[2px] px-[8px] rounded-[999px] flex justify-center items-center"
+                  >
+                    <h5 className={`${typography.labelXSmall} flex flex-row justify-center items-center`}>
+                      {category.name}
+                    </h5>
+                  </div>
+                ))} */}
+
+
+                        <div className='flex flex-row items-center'>
+                        {items.productCategory?.map((category, categoryIndex) => (
+                  <div
+                    key={categoryIndex}
+                    style={{
+                      color: category.fontColor,
+                      backgroundColor: category.bgColor
+                    }}
+                    className={`${categoryIndex > 1 ? 'none' : ''} h-[20px] py-[2px] px-[8px] rounded-[999px] flex justify-center items-center`}
+                  >
+                    <h5 className={`${typography.labelXSmall} flex flex-row justify-center items-center`}>
+                      {category.name}
+                    </h5>
+                  </div>
+                ))}
+                                                    <div className='flex flex-row h-[44px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] '>
+                                                        <div className='flex flex-row max-w-[92px] py-[4px] px-[2px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200 '>
                                                             <div>
                                                                 {items.productStatus === "Out Of Stock" && <img src={errorIcon} alt='Out Of Stock'/> || items.productStatus === "Low stock" && <img src={orangeSatusIcon} alt='Low Stock'/> || items.productStatus === "Active" && <img src={greenSatusIcon} alt='Active'/> }
                                                             </div>
                                                             <h5 className={`${typography.labelXSmall} text-text-sub-500`}>{items.productStatus}</h5>
                                                         </div>
-                                                            </div>
-                                        </div></div>
-                                <div className='flex flex-row h-[56px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] ml-auto '>
-                                                    <div className='flex flex-row gap-[23px]  max-w-[529px] h-[44px] items-center justify-center '>
-                                                        <img src={deleteIcon} alt='bin'/>
-                                                        <img src={pencilIcon} alt='pencil'/>  
                                                     </div>
                                                 </div>
-                            </div>
-                        )
-                    })}
-                        </div>)
-            }
+                
+              </div>
+
+            {/* Edit/Delete Icons */}
+            <div className="flex flex-row h-[56px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] ml-auto">
+              <div className="flex flex-row gap-[23px] max-w-[529px] h-[44px] items-center justify-center">
+                <img src={deleteIcon} alt="Delete product"/>
+                <img src={pencilIcon} alt="Edit product"/>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
         </div>
         <div className='hidden md:flex flex-col flex-1 border-[1px] rounded-[16px] mb-[40px] p-[16px] gap-[16px] border-stroke-soft-200 bg-text-white-0 h-[100%]'>
             {/* <div className='flex flex-1 flex-row h-[32px]'>

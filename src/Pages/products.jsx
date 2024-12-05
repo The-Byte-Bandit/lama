@@ -44,7 +44,7 @@ function Products() {
           </div> 
         </div>
 
-        <div className='w-[100%] flex flex-row flex-1'>
+        <div className='w-[100%] md:flex flex-row'>
           {/* <LargeCardOne/> */}
           <LargeCardTwo/>
         </div>
