@@ -152,7 +152,7 @@ function LargeCardTwo() {
                       color: category.fontColor,
                       backgroundColor: category.bgColor
                     }}
-                    className={`${categoryIndex > 1 ? 'none' : ''} h-[20px] py-[2px] px-[8px] rounded-[999px] flex justify-center items-center`}
+                    className={`${categoryIndex > 0 ? 'hidden' : ''} h-[20px] py-[2px] px-[8px] rounded-[999px] flex justify-center items-center`}
                   >
                     <h5 className={`${typography.labelXSmall} flex flex-row justify-center items-center`}>
                       {category.name}
@@ -490,41 +490,80 @@ function LargeCardTwo() {
 
         </div>
 
-        <div className='flex flex-row gap-[24px] items-center w-[100%] justify-between'>
-            <div>
-                <h5 className={`${typography.paragraphSmall} text-center text-text-sub-500`}>Pages {page} of {lastPage}</h5>
-            </div>
-            <div className='flex flex-row  gap-[10px]'>
-                <img src={arrowLeftDoubleLine} className='hover:cursor-pointer' alt='left' onClick={() => selectPageHandler(1)}  />
-                {products.length > 0 && (
-                    <div className='flex flex-1 justify-center items-center gap-[8px]'>
-                        <span
-                            onClick={() => selectPageHandler(page - 1)}
-                            className={`pagination__nav ${page === 1 && "pagination__disabled"} hover:cursor-pointer`}
-                        >
-                            <img src={arrowLeftSLine} className='hover:cursor-pointer' alt='left'/>
-                        </span>
-                        {renderPageNumbers()}
-                        <span
-                            onClick={() => selectPageHandler(page + 1)}
-                            className={`pagination__nav ${page === totalPages && "pagination__disabled"} hover:cursor-pointer`}
-                        >
-                            <img src={arrowRightSLine} className='hover:cursor-pointer' alt='right'/>
-                        </span>
-                    </div>
-                )}
-                <img src={arrowRightDoubleLine} className='hover:cursor-pointer' alt='right' onClick={() => selectPageHandler(lastPage)}/>
-
-            </div>
-
-            <div>
-                <div className='flex flex-row justify-center gap-[4px] items-center rounded-[8px] p-[6px] bg-bg-white-0 border-[1px] border-stroke-soft-200 w-[97px] h-[32px]  '>
-                    <h5 className={`${typography.paragraphSmall} text-center text-text-main-900`}>8 / Pages</h5>
-                    <img src={arrowDown} alt='arrow'/>
-                </div>
-            </div>
-
+        <div className="flex flex-row gap-[24px] items-center w-[100%] justify-between">
+        {/* Page Indicator */}
+        <div>
+          <h5 className={`${typography.paragraphSmall} text-center text-text-sub-500`}>
+            Page {page} of {lastPage}
+          </h5>
         </div>
+
+        {/* Pagination Controls */}
+        <div className="flex flex-row gap-[10px]">
+          {/* First Page Button */}
+          <img
+            src={arrowLeftDoubleLine}
+            className={`hover:cursor-pointer ${page === 1 && "opacity-50 pointer-events-none"}`}
+            alt="First Page"
+            onClick={() => selectPageHandler(1)}
+          />
+
+          {products.length > 0 && (
+            <div className="flex flex-1 justify-center items-center gap-[8px]">
+              {/* Previous Page Button */}
+              <span
+                onClick={() => selectPageHandler(page - 1)}
+                className={`pagination__nav ${
+                  page === 1 && "pagination__disabled opacity-50 pointer-events-none"
+                } hover:cursor-pointer`}
+              >
+                <img
+                  src={arrowLeftSLine}
+                  className={`hover:cursor-pointer ${page === 1 && "opacity-50"}`}
+                  alt="Previous Page"
+                />
+              </span>
+
+              {/* Page Numbers */}
+              {renderPageNumbers()}
+
+              {/* Next Page Button */}
+              <span
+                onClick={() => selectPageHandler(page + 1)}
+                className={`pagination__nav ${
+                  page === lastPage && "pagination__disabled opacity-50 pointer-events-none"
+                } hover:cursor-pointer`}
+              >
+                <img
+                  src={arrowRightSLine}
+                  className={`hover:cursor-pointer ${page === lastPage && "opacity-50"}`}
+                  alt="Next Page"
+                />
+              </span>
+            </div>
+          )}
+
+          {/* Last Page Button */}
+          <img
+            src={arrowRightDoubleLine}
+            className={`hover:cursor-pointer ${
+              page === lastPage && "opacity-50 pointer-events-none"
+            }`}
+            alt="Last Page"
+            onClick={() => selectPageHandler(lastPage)}
+          />
+        </div>
+
+        {/* Page Size Selector */}
+        <div>
+          <div className="flex flex-row justify-center gap-[4px] items-center rounded-[8px] p-[6px] bg-bg-white-0 border-[1px] border-stroke-soft-200 w-[97px] h-[32px]">
+            <h5 className={`${typography.paragraphSmall} text-center text-text-main-900`}>
+              8 / Pages
+            </h5>
+            <img src={arrowDown} alt="Dropdown Arrow" />
+          </div>
+        </div>
+      </div>
 
     </div>
   )

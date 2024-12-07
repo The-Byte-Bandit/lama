@@ -103,7 +103,7 @@ function LargeCardOne() {
 
 
   return (
-    <div className='max-w-[1901px] max-h-[2000px] flex flex-1 flex-col'>
+    <div className='md:max-w-[1901px] max-h-[2000px] flex md:flex-1 flex-col'>
         <div className='flex flex-col flex-1 border-[1px] rounded-[16px] mb-[40px] p-[16px] gap-[16px] border-stroke-soft-200 bg-text-white-0 h-[100%] min-h-[500px] '>
             {/* <div className='flex flex-1 flex-row h-[32px]'>
                 <div className='flex flex-row gap-[3px] items-center justify-center max-w-[567px]'>
@@ -113,7 +113,7 @@ function LargeCardOne() {
                 <div className='ml-auto flex flex-row justify-center items-center'>
                     <DurationBtn/>
                     <ViewAll/>
-                </div>
+                </div> 
             </div> */}
   
             
@@ -128,13 +128,58 @@ function LargeCardOne() {
                 </div>
                 <h3 className={`${typography.labelMedium}`}>Recent Orders</h3>
                 </div>
-                <div className='ml-auto flex flex-row justify-center items-center'>
+                <div className='hidden ml-auto md:flex flex-row justify-center items-center'>
                     <DurationBtn/>
                     <ViewAll/>
                 </div>
             </div>
+            <div className='md:hidden flex w-full h-full'>
+            {recentOrders &&(
+                                <div className='w-full h-full'>
+                                    {recentOrders.slice(page * 7 - 7, page * 7).map((items, index)=>{
+                                        return(
+                                            <div key={index} className='border-b-stroke-soft-200 border-b-[1px] w-full' >
+                                                <div className='w-full flex flex-row gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] '>
+                                                    <div className='w-full'>
+                                                        <img src={items.icon} alt='icon'/>
+                                                    </div>
 
-            <div className='grid grid-cols-12 w-[100%] h-[100%] min-h-[447px]'>
+                                                    <div className='flex flex-col '>
+                                                        <h5 className={`${typography.paragraphSmall} text-text-main-900 truncate`}>
+                                                            {items.productName}
+                                                        </h5>
+
+                                                       <h5 className={`${typography.labelSmall} text-text-main-900`}>
+                                                            ₦{items.productSale}
+                                                        </h5>
+                                                        
+                                                        <div className='flex flex-row h-[44px] gap-[8px] rounded-[12px] items-center'>
+                                                        <div className='flex flex-row max-w-[92px] py-[4px] px-[2px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200 '>
+                                                            <div>
+                                                                {items.productStatus === "Failed" && <img className='h-[100%]' src={errorIcon} alt='failed'/> || items.productStatus === "Pending" && <img className='h-[100%]' src={orangeSatusIcon} alt='Pending'/> || items.productStatus === "Delivered" && <img className='w-[100%]' src={greenSatusIcon} alt='Delivered'/> }
+                                                            </div>
+                                                            <h5 className={`${typography.labelXSmall} text-text-sub-500`}>{items.productStatus}</h5>
+                                                        </div>
+                                                    </div>
+                                                        
+                                                    </div>
+
+                                                    {/* <div className='flex flex-row h-[56px] gap-[8px] items-center py-[8px] px-[12px] '> */}
+                                                        <div className='w-full flex flex-row h-[44px] gap-[16px] items-center justify-end '>
+                                                                        <h5  className={`${typography.labelXSmall} flex flex-row justify-center  text-right`} >
+                                                                            {items.date}
+                                                                        </h5>
+                                                            </div>
+                                                        {/* </div> */}
+                                                </div>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            )}
+            </div>
+
+            <div className='hidden md:grid grid-cols-12 w-[100%] h-[100%] min-h-[447px]'>
                 <div className='col-span-3'>
                     <div className=' bg-bg-weak-100 h-[34px] flex flex-1 flex-row gap-[4px] rounded-[8px] '>
                         <div className=' flex flex-row items-center max-w-[318px]  py-[8px] px-[16px] gap-[10px]' >
@@ -268,7 +313,7 @@ function LargeCardOne() {
                                                 <div className='flex flex-row h-[56px] gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] '>
                                                     <div className='flex flex-col  max-w-[529px] h-[44px] items-center justify-center '>
                                                         <h5 className={`${typography.paragraphSmall} text-text-main-900`}>
-                                                            {items.productSale}
+                                                            ₦{items.productSale}
                                                         </h5>
                                                     </div>
                                                 </div>
