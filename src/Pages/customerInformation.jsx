@@ -60,10 +60,9 @@ const CustomerInformation = ({ currentStep, totalSteps, handleNext, handleBack }
     { value: 'Female', label: 'Female' }
   ];
 
-  
 
   return (
-    <div className='w-[605px] h-[528px] flex flex-1 gap-[4px] mb-[40px]'>
+    <div className=' md:w-[605px] flex flex-col gap-4 p-6 md:p-0'>
       <Formik
         initialValues={{
           customerName: '',
@@ -87,7 +86,7 @@ const CustomerInformation = ({ currentStep, totalSteps, handleNext, handleBack }
       >
         {({ values, errors, setFieldValue, isSubmitting }) => (
           <Form className='flex flex-col flex-1 gap-[10px] justify-center'>
-            <div className='flex flex-row flex-1 items-center'>
+            <div className='flex flex-row md:flex-1 items-center'>
               <label htmlFor='customerName' className='flex flex-col flex-1 h-[82px]'>
                 <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
                   Customer Fullname{' '}
@@ -237,7 +236,7 @@ const CustomerInformation = ({ currentStep, totalSteps, handleNext, handleBack }
                   <>
                     {values.products.map((product, index) => (
                       <div className="flex flex-col gap-[10px]" key={index}>
-                        <div className='flex flex-row flex-1 items-center'>
+                        <div className='flex md:flex-row flex-1 items-center'>
                           <label htmlFor={`products[${index}].productName`} className='flex flex-col flex-1 h-[82px]'>
                             <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
                               Product Name{' '}
@@ -254,7 +253,7 @@ const CustomerInformation = ({ currentStep, totalSteps, handleNext, handleBack }
                           </label>
                         </div>
 
-                        <div className='flex flex-row flex-1 gap-[10px] items-center'>
+                        <div className='flex flex-col md:flex-row flex-1 gap-[10px] md:items-center'>
                           <label htmlFor={`products[${index}].productSKU`} className='flex flex-col flex-1 h-[82px]'>
                             <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
                               Product SKU{' '}

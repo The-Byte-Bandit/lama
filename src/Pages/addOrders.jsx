@@ -69,9 +69,9 @@ const renderStepContent = () => {
 };
 
   return (
-    <div className="flex ml-[18%] flex-1 items-center max-w-[605px]  ">
-    <div className="w-[100%] flex flex-col gap-[25px] mt-[15px]   ">
-      <div className="flex flex-1 flex-row h-[60px] items-center justify-center relative ">
+    <div className="flex md:ml-[18%] flex-1  md:max-w-[605px]  ">
+    <div className="w-[100%] flex flex-col gap-[40px] mt-[15px] ">
+      <div className="hidden md:flex  flex-1 flex-row h-[60px] items-center justify-center relative ">
         {steps.map((item, index) => (
           <div key={index} ref={(el) => (stepRef.current[index] = el)} className="flex flex-col flex-1 items-center justify-center h-[100%] z-20 ">
             <div className={`${index + 1 === currentStep ? 'bg-primaryPurple600 border-primaryPurple600 ' : index < currentStep ? 'bg-primaryPurple600 border-primaryPurple600 ' : ''} ${index+1 > currentStep ? 'bg-bg-white-0 shadow-custom-150 ' : ''}  ease-2s shadow-custom-150 w-[32px] h-[32px] border-[.8px] border-stroke-soft-200 rounded-[6px] p-[6px]`}>
@@ -86,9 +86,9 @@ const renderStepContent = () => {
           <div className="ease-2s bg-primaryPurple600 h-[100%] absolute top-[35%]  z-10" style={{ width: `${calculateProgressBarWidth()}%` }}></div>
         </div>
       </div>
-      <div className='flex flex-1 flex-col items-center'>
-        <div className='flex flex-col flex-1 gap-[24px] ' >
-          <h2 className={`${typography.subheadingMedium} text-text-sub-500 uppercase`}>{steps[currentStep - 1].title}</h2>
+      <div className='flex flex-1 flex-col md:items-center'>
+        <div className='flex flex-col flex-1 gap-[40px] ' >
+          <h2 className={`${typography.subheadingMedium} px-6 md:px-0 text-text-sub-500 uppercase`}>{steps[currentStep - 1].title}</h2>
           {renderStepContent()}
         </div>
       </div>

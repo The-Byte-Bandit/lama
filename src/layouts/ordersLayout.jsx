@@ -14,7 +14,7 @@ function OrdersLayout() {
 
 
   return (
-    <div className={`fadein  w-[100%] h-full  bg-backgroundGrey`}>
+    <div className={`fadein  w-[100%] min-h-screen  bg-backgroundGrey`}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
         <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>
@@ -55,7 +55,7 @@ function OrdersLayout() {
 
     
             
-      <div className='flex flex-1 w-full h-full'>
+      <div className='w-full h-full'>
         <>
           <Outlet/>
         </>

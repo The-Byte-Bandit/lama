@@ -133,51 +133,55 @@ function LargeCardOne() {
                     <ViewAll/>
                 </div>
             </div>
-            <div className='md:hidden flex w-full h-full'>
-            {recentOrders &&(
-                                <div className='w-full h-full'>
-                                    {recentOrders.slice(page * 7 - 7, page * 7).map((items, index)=>{
-                                        return(
-                                            <div key={index} className='border-b-stroke-soft-200 border-b-[1px] w-full' >
-                                                <div className='w-full flex flex-row gap-[8px] rounded-[12px] items-center py-[8px] px-[8px] '>
-                                                    <div className='w-full'>
-                                                        <img src={items.icon} alt='icon'/>
-                                                    </div>
+            <div className="md:hidden block w-full h-full">
+  {recentOrders && (
+    recentOrders.slice(page * 7 - 7, page * 7).map((items, index) => (
+      <div
+        key={index}
+        className="grid grid-cols-3 border-b-stroke-soft-200 border-b-[1px] gap-[16px] items-center p-[8px]"
+      >
+        {/* Column 1: Product Icon */}
+        <div className="flex items-center">
+          <img src={items.icon} alt="Product Icon" className="h-[56px] w-[56px]" />
+        </div>
 
-                                                    <div className='flex flex-col '>
-                                                        <h5 className={`${typography.paragraphSmall} text-text-main-900 truncate`}>
-                                                            {items.productName}
-                                                        </h5>
+        {/* Column 2: Price and Status */}
+        <div className="flex flex-col gap-[4px]">
+          {/* Price */}
+          <h5 className={`${typography.labelSmall} text-text-main-900`}>
+            ₦{items.productSale}
+          </h5>
 
-                                                       <h5 className={`${typography.labelSmall} text-text-main-900`}>
-                                                            ₦{items.productSale}
-                                                        </h5>
-                                                        
-                                                        <div className='flex flex-row h-[44px] gap-[8px] rounded-[12px] items-center'>
-                                                        <div className='flex flex-row max-w-[92px] py-[4px] px-[2px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200 '>
-                                                            <div>
-                                                                {items.productStatus === "Failed" && <img className='h-[100%]' src={errorIcon} alt='failed'/> || items.productStatus === "Pending" && <img className='h-[100%]' src={orangeSatusIcon} alt='Pending'/> || items.productStatus === "Delivered" && <img className='w-[100%]' src={greenSatusIcon} alt='Delivered'/> }
-                                                            </div>
-                                                            <h5 className={`${typography.labelXSmall} text-text-sub-500`}>{items.productStatus}</h5>
-                                                        </div>
-                                                    </div>
-                                                        
-                                                    </div>
-
-                                                    {/* <div className='flex flex-row h-[56px] gap-[8px] items-center py-[8px] px-[12px] '> */}
-                                                        <div className='w-full flex flex-row h-[44px] gap-[16px] items-center justify-end '>
-                                                                        <h5  className={`${typography.labelXSmall} flex flex-row justify-center  text-right`} >
-                                                                            {items.date}
-                                                                        </h5>
-                                                            </div>
-                                                        {/* </div> */}
-                                                </div>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            )}
+          {/* Status */}
+          <div className="flex items-center gap-[4px] max-w-[92px] py-[4px] px-[2px] rounded-[6px] border-[1px] border-stroke-soft-200">
+            <div>
+              {items.productStatus === "Failed" && (
+                <img src={errorIcon} alt="Failed" className="h-[16px]" />
+              )}
+              {items.productStatus === "Pending" && (
+                <img src={orangeSatusIcon} alt="Pending" className="h-[16px]" />
+              )}
+              {items.productStatus === "Delivered" && (
+                <img src={greenSatusIcon} alt="Delivered" className="h-[16px]" />
+              )}
             </div>
+            <h5 className={`${typography.labelXSmall} text-text-sub-500`}>
+              {items.productStatus}
+            </h5>
+          </div>
+        </div>
+
+        {/* Column 3: Date */}
+        <div className="flex justify-end">
+          <h5 className={`${typography.labelXSmall} text-text-sub-500`}>
+            {items.date}
+          </h5>
+        </div>
+      </div>
+    ))
+  )}
+</div>
+
 
             <div className='hidden md:grid grid-cols-12 w-[100%] h-[100%] min-h-[447px]'>
                 <div className='col-span-3'>

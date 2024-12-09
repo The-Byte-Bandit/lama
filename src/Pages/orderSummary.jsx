@@ -15,9 +15,9 @@ const OrderSummary = ({currentStep, totalSteps, handleNext, handleBack}) => {
   
 
   return (
-    <div className='w-[605px] h-[528px] flex flex-col flex-1 gap-[4px] mb-[40px]'>
+    <div className='md:w-[605px] flex flex-col gap-4 p-6 md:p-0 '>
       <div className='flex flex-col flex-1 gap-[40px]'>
-        <div className='w-[100%] bg-bg-white-0 border-stroke-soft-200 border-[1px] h-[288px] rounded-[12px] p-[24px] flex flex-col gap-[14px]'>
+        <div className='w-[100%] bg-bg-white-0 border-stroke-soft-200 border-[1px] min-h-[288px] rounded-[12px] p-[24px] flex flex-col gap-[14px]'>
           <div className='flex flex-col gap-[4px] w-[100%]'>
             <h5 className={`${typography.labelMedium} text-text-main-900`}>Summary</h5>
             <p className={`${typography.paragraphXSmall} text-text-soft-400`}>Please confirm your order so it can be saved in the system</p>

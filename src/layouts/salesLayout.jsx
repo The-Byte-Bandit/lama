@@ -14,7 +14,7 @@ function SalesLayout() {
 
 
   return (
-    <div className={`fadein h-full  bg-backgroundGrey w-[100%]`}>
+    <div className={`fadein min-h-screen  bg-backgroundGrey w-[100%]`}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
         <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>

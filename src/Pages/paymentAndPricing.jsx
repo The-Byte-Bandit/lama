@@ -82,7 +82,7 @@ const PaymentAndPricing = ({currentStep, totalSteps, handleNext, handleBack}) =>
   
 
   return (
-    <div className='w-[605px] h-[528px] flex flex-1 gap-[4px] mb-[40px]'>
+    <div className='md:w-[605px] flex flex-col gap-4 p-6 md:p-0'>
       <Formik
         initialValues={{
           vat: '',
@@ -167,65 +167,84 @@ const PaymentAndPricing = ({currentStep, totalSteps, handleNext, handleBack}) =>
                     {values.products.map((product, index) => (
                       <div className="flex flex-col gap-[10px]" key={index}>
                         <div className='flex flex-row flex-1 gap-[10px] items-center ]'>
-                          <label htmlFor={`products[${index}].productSKU`} className='flex flex-col flex-1 w-[304px]  h-[82px]'>
-                            <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
-                              Product SKU{' '}
-                              <Tooltip title="Product SKU" placement="top-start">
-                                <span><img src={tooltip} alt='tooTip' />  </span>
-                              </Tooltip>
-                            </h5>
-                            <Field
-                              className='bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] border-stroke-soft-200 focus-visible:outline-[#ccc] focus-visible:outline-[1px]'
-                              name={`products[${index}].productSKU`}
-                              placeholder='Eg - YOGA1234'
-                            />
-                            <ErrorMessage name={`products[${index}].productSKU`} component='p' className='text-[11px] text-[#DC143C]' />
-                          </label>
+                          {/* Product SKU */}
+    <label htmlFor={`products[${index}].productSKU`} className="flex flex-col flex-1 min-w-[150px] md:max-w-[304px] h-[82px]">
+      <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
+        Product SKU{' '}
+        <Tooltip title="Product SKU" placement="top-start">
+          <span>
+            <img src={tooltip} alt="Tooltip" />
+          </span>
+        </Tooltip>
+      </h5>
+      <Field
+        className="bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] border-stroke-soft-200 focus-visible:outline-[#ccc]"
+        name={`products[${index}].productSKU`}
+        placeholder="Eg - YOGA1234"
+      />
+      <ErrorMessage name={`products[${index}].productSKU`} component="p" className="text-[11px] text-[#DC143C]" />
+    </label>
 
-                          <div className='w-[84px]'>
-                            <label htmlFor={`products[${index}].quantity`} className='flex flex-col flex-1 w-[100%x]  h-[82px]'>
-                              <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
-                                Quantity{' '}
-                                <Tooltip title="Product Quantity" placement="top-start">
-                                  <span><img src={tooltip} alt='tooTip' />  </span>
-                                </Tooltip>
-                              </h5>
-                              <Field
-                                className='bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] border-stroke-soft-200 focus-visible:outline-[#ccc] focus-visible:outline-[1px]'
-                                name={`products[${index}].quantity`}
-                                placeholder='0'
-                              />
-                              <ErrorMessage name={`products[${index}].quantity`} component='p' className='text-[11px] text-[#DC143C]' />
-                            </label>
+    {/* Quantity */}
+    <div className="flex-1 min-w-[50px] max-w-[84px]">
+      <label htmlFor={`products[${index}].quantity`} className="flex flex-col flex-1 h-[82px]">
+        <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
+          Quantity{' '}
+          <Tooltip title="Product Quantity" placement="top-start">
+            <span>
+              <img src={tooltip} alt="Tooltip" />
+            </span>
+          </Tooltip>
+        </h5>
+        <Field
+          className="bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] text-center border-stroke-soft-200 justify-center focus-visible:outline-[#ccc]"
+          name={`products[${index}].quantity`}
+          placeholder="0"
+        />
+        <ErrorMessage name={`products[${index}].quantity`} component="p" className="text-[11px] text-[#DC143C]" />
+      </label>
+    </div>
 
-                          </div>
+    {/* Price */}
+    <div className="flex-1 min-w-[50px] max-w-[84px]">
+      <label htmlFor={`products[${index}].price`} className="flex flex-col flex-1 h-[82px]">
+        <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
+          Price{' '}
+          <Tooltip title="Product Price" placement="top-start">
+            <span>
+              <img src={tooltip} alt="Tooltip" />
+            </span>
+          </Tooltip>
+        </h5>
+        <Field
+          className="bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] text-center border-stroke-soft-200 focus-visible:outline-[#ccc]"
+          name={`products[${index}].price`}
+          placeholder="0"
+        />
+        <ErrorMessage name={`products[${index}].price`} component="p" className="text-[11px] text-[#DC143C]" />
+      </label>
+    </div>
 
-                          <div className='w-[84px]'>
-                            <label htmlFor={`products[${index}].price`} className='flex flex-col flex-1 w-[100%]  h-[82px]'>
-                              <h5 className={`${typography.labelSmall} text-text-main-900 flex flex-row items-center gap-1`}>
-                                Price{' '}
-                                <Tooltip title="Product Price" placement="top-start">
-                                  <span><img src={tooltip} alt='tooTip' />  </span>
-                                </Tooltip>
-                              </h5>
-                              <Field
-                                className='bg-bg-white-0 rounded-[10px] border-[1px] p-[10px] border-stroke-soft-200 focus-visible:outline-[#ccc] focus-visible:outline-[1px]'
-                                name={`products[${index}].price`}
-                                placeholder='0'
-                              />
-                              <ErrorMessage name={`products[${index}].price`} component='p' className='text-[11px] text-[#DC143C]' />
-                            </label>
-                          </div>
+    {/* Add Button */}
+    <div
+      className={`${typography.labelSmall} hidden md:flex flex-row gap-[12px] items-center border-[1px] justify-center p-[10px] mt-[4px] bg-bg-white-0 border-stroke-soft-200 rounded-[10px] h-[45px] w-[80px] text-text-sub-500 hover:cursor-pointer`}
+      onClick={() => push({ id: uuidv4(), productName: '', productSKU: '', quantity: '' })}
+    >
+      <span>
+        <img src={addIcon} className="w-[100%]" alt="Add" />
+      </span>
+      Add
+    </div>
 
-                          
-                          
-
-                          <div className={`${typography.labelSmall} hover:cursor-pointer flex flex-row gap-[12px] items-center border-[1px] justify-center p-[10px] mt-[4px] bg-bg-white-0 border-stroke-soft-200 rounded-[10px] h-[45px] w-[80px] text-text-sub-500`}
-                            onClick={() => push({ id: uuidv4(), productName: '', productSKU: '', quantity: '' })}
-                          >
-                            <span><img src={addIcon} className='w-[100%]' alt='add' /> </span>
-                            Add
-                          </div>
+    <div
+      className={`${typography.labelSmall} flex md:hidden flex-row gap-[12px] items-center border-[1px] justify-center p-[10px] mt-[4px] bg-bg-white-0 border-stroke-soft-200 rounded-[10px] h-[45px] w-[80px] text-text-sub-500 hover:cursor-pointer`}
+      onClick={() => push({ id: uuidv4(), productName: '', productSKU: '', quantity: '' })}
+    >
+      {/* <span>
+        <img src={addIcon} className="w-[100%]" alt="Add" />
+      </span> */}
+      +
+    </div>
 
                           {/* <div className='flex flex-col justify-center'>
                           <button
