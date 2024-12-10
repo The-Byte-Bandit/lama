@@ -99,6 +99,8 @@ import caro1 from '../assets/images/carousel/Frame 322.png'
 import caro2 from '../assets/images/carousel/Frame 1222.png'
 import caro3 from '../assets/images/carousel/Frame 122.png'
 import logs from '../assets/images/carousel/Group.png'
+import edit from '../assets/images/icons/edit-circle-fill.svg'
+import edit_arrow from '../assets/images/icons/arrow-edit.svg'
 
 
 export const sideNavLinks =[
@@ -2209,5 +2211,7 @@ export {
     logs,
     caro3,
     caro2,
-    caro1
+    caro1,
+    edit,
+    edit_arrow,
 }

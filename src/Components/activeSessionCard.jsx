@@ -43,7 +43,7 @@ function ActiveSessionCard() {
                     </div>
                 </div>
 
-                <div className="col-span-1 flex flex-col h-full">
+                <div className="col-span-1 hidden md:flex flex-col h-full">
                     <div className='bg-bg-weak-100  w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
                         <div className={`flex flex-row flex-nowrap max-w-[160px] gap-[10px]`}>
                             <h3 className={`${typography.paragraphSmall}`}>Location</h3>
@@ -68,7 +68,7 @@ function ActiveSessionCard() {
                     <div className='bg-stroke-soft-200 h-[1px] rounded-none w-[100%] mt-[5px]'> </div>
                 </div>
 
-                <div className="flex flex-col col-span-2 h-full">
+                <div className="hidden md:flex flex-col col-span-2 h-full">
                     <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
                         <div className={`flex flex-row  items-center gap-[10px]`}>
                             <h3 className={`${typography.paragraphSmall}`}>Most recent activity</h3>

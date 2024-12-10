@@ -34,10 +34,10 @@ function SettingsLayout() {
   }
 
   return (
-    <div className={`fadein fadein w-[100%] min-h-screen bg-backgroundGrey`}>
+    <div className={` fadein w-[100%] min-h-screen bg-backgroundGrey`}>
       <div className={`${styles.paddingMain} mb-[0px] flex w-[100%] pt-[20px] pb-[9px] bg-bg-white-0`}>
         <div className='flex flex-row flex-1 justify-between gap-[12px]'>
-          <div className='flex flex-col gap-[4px]'>
+          <div className='hidden md:flex flex-col gap-[4px]'>
             <h3 className={`${typography.labelLarge}`}>Settings</h3>
             <p className={`${typography.paragraphSmall}`}>{settingstHeadingMessage}</p>
           </div>
@@ -52,7 +52,7 @@ function SettingsLayout() {
       </div>
       
       <div className='flex flex-row flex-1 w-full h-full'>
-        <div className='flex flex-col w-[35%]  bg-bg-white-0 p-[20px] border-[1px] border-stroke-soft-200'>
+        <div className='hidden md:flex flex-col w-[35%]  bg-bg-white-0 p-[20px] border-[1px] border-stroke-soft-200'>
           <div className='max-w-[400px] flex flex-col flex-1'>
             <div className='flex flex-col w-[100%] font-semibold text-text-soft-400'>
               <Link to='account-settings'>

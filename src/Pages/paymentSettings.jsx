@@ -1,5 +1,5 @@
 import styles, {typography} from '../style';
-import { secondWhiteAddIcon, dot } from '../constants/constant';
+import { secondWhiteAddIcon, dot,edit_arrow } from '../constants/constant';
 
 function PaymentSettings() {
   return (
@@ -10,8 +10,8 @@ function PaymentSettings() {
         </div>
 
         <div className='flex flex-col w-full gap-[20px]'>
-          <div className='w-full flex flex-row flex-1'>
-            <div className='flex flex-col gap-[12px] max-w-[416px] w-[50%]'>
+          <div className='w-full flex flex-col md:flex-row flex-1 gap-[16px] md:gap-0'>
+            <div className='flex flex-col gap-[12px] max-w-[416px] md:w-[50%]'>
               <h5 className={`${typography.labelSmall} text-text-main-900`}>Payment method</h5>
               <p className={`${typography.paragraphXSmall}`}>Add or remove payment method for ease of transaction.</p>
             </div>
@@ -37,17 +37,18 @@ function PaymentSettings() {
 
                 <div className='flex flex-row flex-1'>
                   <p className={`${typography.labelSmall} cursor-pointer text-primary-purple-700`}>Edit</p>
+                  <img src={edit_arrow} alt='edit'/>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div className='bg-stroke-soft-200 h-[1px] rounded-none w-[100%] mt-[5px]'> </div>
+          <div className='bg-stroke-soft-200 h-[1px] hidden md:block rounded-none w-[100%] mt-[5px]'> </div>
 
 
-          <div className='w-full flex flex-row flex-1'>
-            <div className='flex flex-col gap-[12px] max-w-[416px] w-[50%]'>
+          <div className='w-full flex flex-col md:flex-row flex-1 gap-[16px] md:gap-0'>
+            <div className='flex flex-col gap-[12px] max-w-[416px] md:w-[50%]'>
               <h5 className={`${typography.labelSmall} text-text-main-900`}>Billing information</h5>
               <p className={`${typography.paragraphXSmall}`}>This is the account that payment will be deducted from.</p>
             </div>
@@ -68,6 +69,7 @@ function PaymentSettings() {
 
                 <div className='flex flex-row flex-1'>
                   <p className={`${typography.labelSmall} cursor-pointer text-primary-purple-700`}>Edit</p>
+                  <img src={edit_arrow} alt='edit'/>
                 </div>
               </div>
             </div>
