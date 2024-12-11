@@ -9,6 +9,7 @@ import { ordersHeadingMessage} from '../constants/constant.js';
 import { Outlet } from 'react-router-dom';
 import DurationBtn from '../Components/durationBtn.jsx';
 import { Link } from 'react-router-dom';
+import SideNav from '../Components/sideNav.jsx';
 
 function OrdersLayout() {
 
@@ -26,6 +27,9 @@ function OrdersLayout() {
             <div className='flex gap-[12px]'>
               <CsearchIcon/>
               <CnotificationIcon/>
+              <div className='md:hidden'>
+                <SideNav/>
+              </div>
               <CinboxIcon/>
             </div>
           </div>

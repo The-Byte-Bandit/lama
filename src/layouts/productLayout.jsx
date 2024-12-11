@@ -9,6 +9,7 @@ import { productHeadingMessage, AddProductHeadingMessage } from '../constants/co
 import { Outlet } from 'react-router-dom';
 import DurationBtn from '../Components/durationBtn.jsx';
 import { Link, useLocation } from 'react-router-dom';
+import SideNav from '../Components/sideNav.jsx';
 
 function ProductsLayout() {
 
@@ -41,6 +42,9 @@ function ProductsLayout() {
             <div className='flex gap-[12px]'>
               <CsearchIcon/>
               <CnotificationIcon/>
+              <div className='md:hidden'>
+                <SideNav/>
+              </div>
               <CinboxIcon/>
             </div>
           </div>

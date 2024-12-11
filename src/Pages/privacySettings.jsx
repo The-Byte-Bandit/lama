@@ -13,7 +13,7 @@ function PrivacySettings() {
         </div>
 
         <div className='flex flex-col flex-1 gap-[32px]'>
-          <div className='flex flex-row flex-1'>
+          <div className='flex flex-col md:flex-row flex-1 gap-2 md:gap-0'>
             <div className='flex flex-col flex-1 gap-[4px]'>
               <h5 className={`${typography.labelSmall} text-text-main-900`}>Change Password</h5>
               <p className={`${typography.paragraphXSmall}`}>Update password for enhanced account security.</p>
@@ -26,9 +26,9 @@ function PrivacySettings() {
             </div>
           </div>
 
-          <div className='bg-stroke-soft-200 h-[1px] rounded-none w-[100%] mt-[5px]'> </div>
+          <div className='bg-stroke-soft-200 h-[1px] hidden md:block rounded-none w-[100%] mt-[5px]'> </div>
 
-          <div className='flex flex-row flex-1'>
+          <div className='flex flex-col md:flex-row flex-1 gap-2 md:gap-0'>
             <div className='flex flex-col flex-1 gap-[4px]'>
               <h5 className={`${typography.labelSmall} text-text-main-900`}>Two-factor Authentication</h5>
               <p className={`${typography.paragraphXSmall}`}>Add an extra layer of protection to your account.</p>
@@ -41,9 +41,9 @@ function PrivacySettings() {
             </div>
           </div>
 
-          <div className='bg-stroke-soft-200 h-[1px] rounded-none w-[100%] mt-[5px]'> </div>
+          <div className='bg-stroke-soft-200 h-[1px] hidden md:block rounded-none w-[100%] mt-[5px]'> </div>
 
-          <div className='flex flex-row flex-1'>
+          <div className='flex flex-col md:flex-row flex-1 gap-2 md:gap-0'>
             <div className='flex flex-col flex-1 gap-[4px]'>
               <h5 className={`${typography.labelSmall} text-text-main-900`}>Active Sessions</h5>
               <p className={`${typography.paragraphXSmall}`}>Monitor and manage all your active sessions.</p>

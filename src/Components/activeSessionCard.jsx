@@ -9,8 +9,8 @@ function ActiveSessionCard() {
   return (
     <div>
         {sessionState.sessions.length > 0  && (
-            <div className="grid grid-cols-6 h-full rounded-[8px] border border-stroke-soft-200">
-                <div className="col-span-2 h-full">
+            <div className="grid grid-cols-2 md:grid-cols-8 h-full rounded-[8px] border border-stroke-soft-200">
+                <div className="md:col-span-2 h-full">
                     <div className='flex flex-col h-full'>
                         <div className='bg-bg-weak-100  w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
                             <div className={`flex flex-row max-w-[186px] items-center gap-[10px]`}>
@@ -43,7 +43,7 @@ function ActiveSessionCard() {
                     </div>
                 </div>
 
-                <div className="col-span-1 hidden md:flex flex-col h-full">
+                <div className="col-span-2 hidden md:flex flex-col h-full">
                     <div className='bg-bg-weak-100  w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
                         <div className={`flex flex-row flex-nowrap max-w-[160px] gap-[10px]`}>
                             <h3 className={`${typography.paragraphSmall}`}>Location</h3>
@@ -69,7 +69,7 @@ function ActiveSessionCard() {
                 </div>
 
                 <div className="hidden md:flex flex-col col-span-2 h-full">
-                    <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
+                    <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] pl-[12px]'>
                         <div className={`flex flex-row  items-center gap-[10px]`}>
                             <h3 className={`${typography.paragraphSmall}`}>Most recent activity</h3>
                             <div>
@@ -94,7 +94,7 @@ function ActiveSessionCard() {
                     <div className='bg-stroke-soft-200 h-[1px] rounded-none w-[100%] mt-[5px]'> </div>
                 </div>
 
-                <div className="flex flex-col h-full">
+                <div className="flex flex-col md:col-span-2 h-full">
                     <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center py-[8px] px-[12px] mb-[10px]'>
                         <div className={`flex flex-row  items-center gap-[10px]`}>
                             <h3 className={`${typography.paragraphSmall}`}>IP Address</h3>

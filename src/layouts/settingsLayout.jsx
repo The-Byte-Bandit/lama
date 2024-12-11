@@ -6,6 +6,7 @@ import CinboxIcon from '../Components/inbox.jsx';
 import CnotificationIcon from '../Components/notification.jsx';
 import { userset, settings_wallet, notification_seticon, privAndsec, arro, settingstHeadingMessage } from '../constants/constant.js';
 import { useSelector } from 'react-redux';
+import SideNav from '../Components/sideNav.jsx';
 
 function SettingsLayout() {
   const userProfile = useSelector((state) => state.userProfile);
@@ -41,11 +42,18 @@ function SettingsLayout() {
             <h3 className={`${typography.labelLarge}`}>Settings</h3>
             <p className={`${typography.paragraphSmall}`}>{settingstHeadingMessage}</p>
           </div>
-          <div className='flex'>
-            <div className='flex gap-[12px]'>
+          <div className='flex w-full md:w-fit'>
+            <div className='flex gap-[12px] w-full'>
+              <div className='md:hidden'>
+                <SideNav/>
+              </div>
+            
               <CsearchIcon />
               <CnotificationIcon />
-              <CinboxIcon />
+              <div className=' ml-auto md:ml-0'>
+                <CinboxIcon />
+              </div>
+              
             </div>
           </div>
         </div>

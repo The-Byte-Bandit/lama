@@ -7,6 +7,7 @@ import CnotificationIcon from '../Components/notification';
 import { walletHeadingMessage} from '../constants/constant';
 import { Outlet } from 'react-router-dom';
 import DurationBtn from '../Components/durationBtn.jsx';
+import SideNav from '../Components/sideNav.jsx';
 
 
 function WalletLayout() {
@@ -25,6 +26,9 @@ function WalletLayout() {
             <div className='flex gap-[12px]'>
               <CsearchIcon/>
               <CnotificationIcon/>
+              <div className='md:hidden'>
+                <SideNav/>
+              </div>
               <CinboxIcon/>
             </div>
           </div>
