@@ -17,20 +17,22 @@ function SalesLayout() {
   return (
     <div className={`fadein min-h-screen  bg-backgroundGrey w-[100%]`}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
-        <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
+        <div className='flex flex-col-reverse md:flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>
             <h3 className={`${typography.labelLarge}`}> Sales</h3>
                   <p className={`${typography.paragraphSmall}`}>{salesHeadingMessage }</p>
           </div>
 
           <div className=' flex' >
-            <div className='flex gap-[12px]'>
+            <div className='flex gap-[12px] w-full md:w-fit'>
               <CsearchIcon/>
               <CnotificationIcon/>
               <div className='md:hidden'>
                 <SideNav/>
               </div>
-              <CinboxIcon/>
+              <div className='ml-auto md:ml-0'>
+                <CinboxIcon/>
+              </div>
             </div>
           </div>
         </div>
@@ -39,16 +41,18 @@ function SalesLayout() {
 
       <div className={`${styles.paddingMain}  w-[100%]  py-[12px]`}>
         <div className='flex flex-row justify-between border-b border-stroke-soft-200 pb-[10px]'>
-            <div>
+          <div className='hidden md:block '>
               <DurationBtn/>
-            </div>
+          </div>
             
-            <div className='flex flex-row  '>
-              <div className=' flexitems-center'>
+          <div className='ml-auto md:ml-0 flex flex-row  '>
+              <div className=' flex items-center'>
                 <CsearchIcon/>
               </div>
               <div className='flex flex-1 flex-row gap-[12px]  items-center'>
-                <ExportDataBtn/>
+                <div className='hidden md:block'>
+                  <ExportDataBtn/>
+                </div>
                 <Link to ={`add-orders`}>
                   <AddOrderBtn/>
                 </Link>

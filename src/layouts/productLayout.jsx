@@ -32,20 +32,23 @@ function ProductsLayout() {
   return (
     <div className={`fadein w-[100%] min-h-screen bg-backgroundGrey`}>
       <div className={`${styles.paddingMain} flex w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
-        <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
+        <div className='flex flex-col-reverse md:flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>
             <h3 className={`${typography.labelLarge}`}> {location.pathname.includes("add-product") ? 'Add Product': 'Products'}</h3>
                   <p className={`${typography.paragraphSmall}`}>{location.pathname.includes("add-product") ? productHeadingMessage: AddProductHeadingMessage }</p>
           </div>
 
-          <div className=' flex' >
-            <div className='flex gap-[12px]'>
+          <div className='ml-auto md:ml-0 flex items-center justify-center' >
+            <div className='flex md:gap-[12px]'>
               <CsearchIcon/>
               <CnotificationIcon/>
               <div className='md:hidden'>
                 <SideNav/>
               </div>
+
+              <div className='hidden md:block'>
               <CinboxIcon/>
+              </div>
             </div>
           </div>
         </div>

@@ -25,13 +25,13 @@ function SideNav() {
     <div id='sidenav'>
       <div className='mini md:hidden absolute top-0 left-0 z-20'>
         {/* Small Screen Navigation */}
-        <div className={`${miniNavVisible ? 'border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] min-h-screen fadein ease-in-out' : ''} bg-neutrals-white-50 w-full  flex flex-col justify-between  rounded-tr rounded-br`}>
+        <div className={`${miniNavVisible ? 'border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] min-h-screen fadein transition-opacity' : ''} bg-neutrals-white-50 w-full  flex flex-col justify-between  rounded-tr rounded-br`}>
           {/* Header Section */}
-          <div className='flex justify-between items-center px-4 py-3 border-b-stroke-soft-200 border-b-[1.5px]'>
+          <div className='flex justify-between items-center px-3 py-3 border-b-stroke-soft-200'>
                         {/* Collapsible Button */}
                         <button
               id="toggleMiniNav"
-              className='text-swiphr-purple text-2xl'
+              className='text-[#000] text-2xl flex items-center justify-center'
               onClick={() => setMiniNavVisible(!miniNavVisible)}
             >
               ☰
@@ -44,7 +44,7 @@ function SideNav() {
           </div>
 
           {/* Links Section */}
-          <div className={`${miniNavVisible ? 'flex' : 'hidden'} flex-col gap-2 px-4`}>
+          <div className={`${miniNavVisible ? 'flex ' : 'hidden'} flex-col gap-2 px-4`}>
             <ul className='flex flex-col gap-3'>
               {sideNavLinks.map((link) => (
                 <li
@@ -85,10 +85,17 @@ function SideNav() {
         </div>
       </div>
 
-      <div className={`${miniNavVisible ? 'flex' : 'hidden'} w-screen h-screen bg-[#00000081] absolute z-10`}></div>
+      <div className={`${miniNavVisible ? 'flex' : 'hidden'} w-screen h-screen bg-[#00000081] ease-linear absolute left-0 z-10 transition-opacity duration-300 top-0`}></div>
+      
+      {/* {miniNavVisible && (
+          <div
+            className="w-screen h-screen bg-[#00000081] absolute z-10 transition-opacity duration-300"
+            onClick={() => setMiniNavVisible(false)}
+          />
+        )} */}
 
-      <div className='hidden md:block'>
-        <div  className='bg-neutrals-white-50  max-w-[227px] w-[100%] h-full hidden md:flex flex-1 flex-col justify-between border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] rounded-tr rounded-br'>
+      <div className=' bg-neutrals-white-50  max-w-[227px] w-[100%] h-full hidden md:flex flex-1 flex-col justify-between border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] rounded-tr rounded-br'>
+        <div  className=''>
           <div className={`${styles.paddingL1} flex flex-col `}>
             <div className='flex max-w-[248px] justify-center items-center border-b-stroke-soft-200 border-b-[1.5px] h-[77px]'>
               <img src={Swiphr} alt="Swiphr" />

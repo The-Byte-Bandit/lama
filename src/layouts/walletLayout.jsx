@@ -16,20 +16,23 @@ function WalletLayout() {
   return (
     <div className={`fadein w-[100%] h-full min-h-screen bg-backgroundGrey `}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
-        <div className='flex flex-row flex-1 justify-between  gap-[12px] '>
+        <div className='flex flex-col-reverse md:flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>
             <h3 className={`${typography.labelLarge}`}>Wallet</h3>
                   <p className={`${typography.paragraphSmall}`}>{walletHeadingMessage }</p>
           </div>
 
-          <div className=' flex' >
-            <div className='flex gap-[12px]'>
+          <div className='ml-auto md:ml-0 flex items-center justify-center' >
+            <div className='flex md:gap-[12px]'>
               <CsearchIcon/>
               <CnotificationIcon/>
               <div className='md:hidden'>
                 <SideNav/>
               </div>
-              <CinboxIcon/>
+              
+              <div className='hidden md:block'>
+                <CinboxIcon/>
+              </div>
             </div>
           </div>
         </div>
@@ -37,7 +40,7 @@ function WalletLayout() {
       </div>
 
       <div className={`${styles.paddingMain}  w-[100%]  `}>
-        <div className='flex flex-row justify-between border-b border-stroke-soft-200 pb-[10px]'>
+        <div className='flex flex-row items-center justify-between border-b border-stroke-soft-200 pb-[10px]'>
             <div>
               <DurationBtn/>
             </div>

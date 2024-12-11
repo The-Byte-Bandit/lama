@@ -49,8 +49,10 @@ function SettingsLayout() {
               </div>
             
               <CsearchIcon />
-              <CnotificationIcon />
-              <div className=' ml-auto md:ml-0'>
+              <div className='ml-auto md:ml-0'>
+                <CnotificationIcon />
+              </div>
+              <div className=' hidden md:block'>
                 <CinboxIcon />
               </div>
               
