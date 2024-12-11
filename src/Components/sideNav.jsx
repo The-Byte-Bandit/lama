@@ -25,7 +25,7 @@ function SideNav() {
     <div id='sidenav'>
       <div className='mini md:hidden absolute top-0 left-0 z-20'>
         {/* Small Screen Navigation */}
-        <div className={`${miniNavVisible ? 'border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] min-h-screen' : ''} bg-neutrals-white-50 w-full  flex flex-col justify-between  rounded-tr rounded-br`}>
+        <div className={`${miniNavVisible ? 'border-r-[#E2E4E9] border-b-[#E2E4E9] border-b-[1.5px] border-r-[1.5px] min-h-screen fadein ease-in-out' : ''} bg-neutrals-white-50 w-full  flex flex-col justify-between  rounded-tr rounded-br`}>
           {/* Header Section */}
           <div className='flex justify-between items-center px-4 py-3 border-b-stroke-soft-200 border-b-[1.5px]'>
                         {/* Collapsible Button */}
