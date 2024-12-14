@@ -15,7 +15,7 @@ function SalesLayout() {
 
 
   return (
-    <div className={`fadein min-h-screen  bg-backgroundGrey w-[100%]`}>
+    <div className={`fadein min-h-screen bg-bg-white-0  md:bg-backgroundGrey w-[100%]`}>
       <div className={`${styles.paddingMain} flex  w-[100%]  pt-[20px] pb-[9px] bg-bg-white-0 `}>
         <div className='flex flex-col-reverse md:flex-row flex-1 justify-between  gap-[12px] '>
           <div className='flex flex-col gap-[4px]'>
@@ -39,21 +39,21 @@ function SalesLayout() {
         
       </div>
 
-      <div className={`${styles.paddingMain}  w-[100%]  py-[12px]`}>
+      <div className={`${styles.paddingMain}  w-[100%]  py-[12px] bg-backgroundGrey`}>
         <div className='flex flex-row justify-between border-b border-stroke-soft-200 pb-[10px]'>
           <div className='hidden md:block '>
               <DurationBtn/>
           </div>
             
-          <div className='ml-auto md:ml-0 flex flex-row  '>
+          <div className='ml-auto md:ml-0 flex flex-row '>
               <div className=' flex items-center'>
                 <CsearchIcon/>
               </div>
-              <div className='flex flex-1 flex-row gap-[12px]  items-center'>
+              <div className='flex flex-1 flex-row gap-[12px]  items-center '>
                 <div className='hidden md:block'>
                   <ExportDataBtn/>
                 </div>
-                <Link to ={`add-orders`}>
+                <Link to ={`/home/orders/add-orders`}>
                   <AddOrderBtn/>
                 </Link>
               </div>

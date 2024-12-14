@@ -114,7 +114,7 @@ function SideNav() {
                     if (link.url !== 'settings') setMiniNavVisible(false);
                   }}
                   className={`flex flex-col gap-4 cursor-pointer hover:bg-weak-100 p-2 rounded-md ${
-                    location.pathname.includes(link.url) ? 'bg-weak-100' : ''
+                    location.pathname.includes(link.url) ? 'bg-bg-weak-100' : ''
                   }`}
                 >
                   {link.url === 'settings' ? (

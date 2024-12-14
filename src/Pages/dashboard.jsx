@@ -17,7 +17,7 @@ function Dashboard() {
   const cardState = useSelector((state)=> state.dashboard)
 
   return (
-    <div className={`${styles.paddingMain} w-[100%] max-w-screen bg-backgroundGrey`}>
+    <div className={`${styles.paddingMain} w-[100%] max-w-screen bg-bg-white-0  md:bg-backgroundGrey`}>
       <div className='flex flex-col  flex-1 sticky w-[100%] h-full'>
         <div className='items-center justify-between  '>
           <div className='flex-col md:flex-row flex flex-1 justify-between border-b  gap-[12px] pb-[16px] border-stroke-soft-200 '>
@@ -28,7 +28,7 @@ function Dashboard() {
             <div className='ml-auto flex items-center'>
                 <CsearchIcon/>
             </div>
-            <div className='flex flex-row gap-[12px] items-center justify-end'>
+            <div className='flex flex-row gap-[12px] w-full md:w-fit items-center justify-end bg-bg-white-0  md:bg-backgroundGrey'>
               <ExportBtn/>
               <Link to ={`add-product`}>
                 <AddProductBtn/>

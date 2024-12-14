@@ -5,7 +5,7 @@ import styles, {typography} from '../style';
 
 function NotificationSettings() {
   return (
-    <div className={`${styles.paddingMain} fadein w-full h-full bg-backgroundGrey flex flex-col`}>
+    <div className={`${styles.paddingMain} fadein w-full h-full bg-bg-white-0  md:bg-backgroundGrey flex flex-col`}>
       <div className='w-full  flex flex-col flex-1 gap-[32px]'>
         <div className='flex flex-row flex-1 items-center'>
           <h5 className={`${typography.labelLarge} text-text-main-900`}>Notification Settings</h5>

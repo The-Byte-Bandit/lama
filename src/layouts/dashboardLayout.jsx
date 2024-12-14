@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 function DashboardLayout() {
     return (
-        <div className='fadein dashboard w-[100%] min-h-screen bg-backgroundGrey overflow-hidden'>
+        <div className='fadein dashboard w-[100%] min-h-screen bg-bg-white-0  md:bg-backgroundGrey overflow-hidden'>
             <div className='flex flex-col flex-1 h-full'>
             <div className='md:hidden'>
                 <SideNav/>

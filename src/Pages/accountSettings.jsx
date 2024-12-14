@@ -5,7 +5,7 @@ import { closeFillIcon, profileAvatar, edit } from '../constants/constant';
 
 function AccountSettings() {
   return (
-    <div className={`${styles.paddingMain} fadein w-full h-full bg-backgroundGrey flex flex-col gap-[60px]`}>
+    <div className={`${styles.paddingMain} fadein w-full h-full bg-bg-white-0  md:bg-backgroundGrey flex flex-col gap-[60px]`}>
       <div className='w-full  flex flex-col flex-1 gap-[32px]'>
         <div className='flex flex-col-reverse gap-[20px] md:gap-0 md:flex-row flex-1 md:items-center'>
           <h5 className={`${typography.labelLarge} text-text-main-900`}>Personal Details</h5>
