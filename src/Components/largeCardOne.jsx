@@ -498,7 +498,7 @@ function LargeCardOne() {
 
         </div>
 
-        <div className='flex flex-row gap-[24px] items-center w-[100%] justify-between'>
+        <div className='hidden md:flex flex-row gap-[24px] items-center w-[100%] justify-between'>
             <div>
                 <h5 className={`${typography.paragraphSmall} text-center text-text-sub-500`}>Pages {page} of {lastPage}</h5>
             </div>

@@ -16,7 +16,7 @@ function VerticalCard(props) {
 
 
   return (
-    <div className='flex flex-1 max-w-[700px] max-h-[867px]'>
+    <div className='flex flex-1 max-w-[700px] max-h-[867px] overflow-hidden'>
         <div className='flex  flex-1 flex-col h-[100%] w-[100%] md:w-[100%] p-[16px] rounded-[16px] border-[1px] shadow-custom-150 bg-bg-white-0 border-stroke-soft-200'>
             <div className='flex flex-1 flex-row w-[100%]'>
                 <div className='p-[1px] flex flex-row gap-[3px] items-center justify-center'>

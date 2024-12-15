@@ -160,8 +160,8 @@ const renderEmptyState = (message, imgSrc) => (
           </div>
         )}
         {dashboardCardState.recentOrders.length > 0 &&(cardType === "orders" || cardType === "Orders" ) && (
-          <div className="grid grid-cols-6 h-full">
-          <div className="col-span-2 h-full">
+          <div className="grid grid-cols-3 md:grid-cols-4 h-full w-full">
+          <div className="col-span- h-full">
             <div className='flex flex-col h-full'>
               <div className='flex flex-row bg-bg-weak-100 mb-[10px]'>
                 <div>
@@ -174,17 +174,47 @@ const renderEmptyState = (message, imgSrc) => (
                   </div>
                 </div>
               </div>
-              <div className='flex flex-col justify-between h-full'>
+
+
+              
+              <div className="flex flex-1 md:hidden flex-col justify-between gap-2 h-full overflow-hidden truncate">
+  {dashboardCardState.recentOrders.slice(0, 5).map((item, index) => (
+    <div
+      key={index}
+      className="flex flex-1 flex-row items-center gap-[10px] truncate border border-stroke-soft-200 w-full max-h-[75px] rounded-lg"
+    >
+      <div className="flex items-center p-2 gap-[8px] max-w-[100px]">
+
+        <div>
+                        <img src={nurayAvatar} alt='avatar'/>
+                      </div>
+        <div className="flex flex-col justify-center truncate">
+          <p className={`${typography.paragraphSmall} truncate`}>
+            {item.product}
+          </p>
+          <p className={`${typography.paragraphXSmall} truncate text-text-sub-500`}>
+            {item.email}
+          </p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+              <div className='hidden md:flex flex-col justify-between h-full'>
                 {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                   <div key={index} className='flex flex-1 items-center flex-row gap-[10px] border-b border-stroke-soft-200 w-[100%] max-h-[75px] 2xl:max-h-[105px]  mt-[0px]'>
                     <div>
                       <input type="checkbox" />
                     </div>
-                    <div className='flex justify-center items-center ml-[6px] gap-[8px] max-w[100px] '>
-                      <div>
-                        <img src={nurayAvatar} alt='avatar'/>
+                    <div className='flex flex-row items-center h-full w-full  gap-[8px]  truncate'>
+                    {/* <div className="flex items-center p-2 gap-[8px] max-w-[100px]"> */}
+
+<div>
+                        <img src={nurayAvatar} alt="avatar" className="" />
                       </div>
-                      <div className='flex flex-col justify-center items-center'>
+                      <div className='truncate w-full'>
                         <p className={`${typography.paragraphSmall} truncate`}>
                           {item.product}
                         </p>
@@ -196,23 +226,40 @@ const renderEmptyState = (message, imgSrc) => (
             </div>
           </div>
 
-          <div className="col-span-2 flex flex-col h-full">
-            <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] px-[12px]'>
+          <div className="col-span- flex flex-col h-full">
+            <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center mb-[10px] py-[8px] pl-[12px]'>
               <div className={`flex flex-row flex-nowrap max-w-[160px] gap-[10px]`}>
-                <h3 className={`${typography.paragraphSmall}`}>Customer Name</h3>
+                <h3 className={`${typography.paragraphSmall} truncate`}>Customer Name</h3>
                 <div>
                   <img src={toggle} alt='toggle' />
                 </div>
               </div>
             </div>
-            <div className='flex flex-col h-full justify-between'>
+
+
+            <div className='md:hidden flex flex-1 flex-col h-full justify-between'>
+              {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
+                <div key={index} className='flex flex-1 items-center gap-[10px]  max-h-[75px] 2xl:max-h-[105px]  mt-[0px] px-[12px]  border-stroke-soft-200'>
+                  <div className='flex flex-col gap-[6px] truncate'>
+                    <p className={`${typography.paragraphSmall} truncate`}>
+                      {item.userName}
+                    </p>
+                    <p className={`${typography.paragraphXSmall} truncate text-text-sub-500`}>
+                      {item.email}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className='hidden md:flex flex-col h-full justify-between'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex flex-1 items-center gap-[10px]  max-h-[75px] 2xl:max-h-[105px]  mt-[0px] px-[12px] border-b border-stroke-soft-200'>
                   <div className='flex flex-col gap-[6px] truncate'>
                     <p className={`${typography.paragraphSmall} truncate`}>
                       {item.userName}
                     </p>
-                    <p className={`${typography.paragraphXSmall} truncate`}>
+                    <p className={`${typography.paragraphXSmall} truncate text-text-sub-500`}>
                       {item.email}
                     </p>
                   </div>
@@ -230,7 +277,32 @@ const renderEmptyState = (message, imgSrc) => (
                 </div>
               </div>
             </div>
-            <div className='flex flex-1 flex-col justify-between h-full'>
+
+            <div className='md:hidden flex flex-1 flex-col justify-between gap-2 h-full'>
+              {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
+                <div key={index} className='flex flex-col  p-[12px] items-center max-h-[75px]  mt-[0px] border rounded-xl border-stroke-soft-200'>
+                  <div className='flex max-w-[85px] truncate'>
+                    <h5 className={`${typography.labelSmall} text-text-main-900 truncate`}>
+                      ₦{item.amount.toLocaleString()}
+                    </h5>
+                  </div>
+                  <div className='flex flex-1 flex-col justify-between h-full'>
+                <div className='flex items-center flex-1  max-h-[75px] mt-[0px]   py-[4px]'>
+                  <div className='flex flex-row gap-[4px] items-center'>
+                    <div>
+                      {item.status === "Pending" && <img src={orangeSatusIcon} alt='pending'/> || item.status === "Shipped" && <img src={yellowSatusIcon} alt='shipped'/> || item.status === "Delivered" && <img src={greenSatusIcon} alt='delivered'/> }
+                    </div>
+                    <h5 className={`${typography.labelXSmall} text-text-sub-500`}>{item.status}</h5>
+                  </div>
+                </div>
+            </div>
+                </div>
+              ))}
+              
+            </div>
+
+
+            <div className='hidden md:flex flex-1 flex-col justify-between h-full'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex flex-1  px-[12px] items-center max-h-[75px] 2xl:max-h-[105px]  mt-[0px] border-b border-stroke-soft-200'>
                   <div className='flex max-w-[85px] truncate'>
@@ -243,7 +315,7 @@ const renderEmptyState = (message, imgSrc) => (
             </div>
           </div>
 
-          <div className="flex flex-col h-full">
+          <div className="hidden md:flex flex-col h-full">
             <div className='bg-bg-weak-100 w-[100%] h-[24px] flex items-center py-[8px] px-[12px] mb-[10px]'>
               <div className={`flex flex-row  items-center gap-[10px]`}>
                 <h3 className={`${typography.paragraphSmall}`}>Status</h3>
@@ -252,7 +324,7 @@ const renderEmptyState = (message, imgSrc) => (
                 </div>
               </div>
             </div>
-            <div className='flex flex-1 flex-col justify-between h-full'>
+            <div className='hidden md:flex flex-1 flex-col justify-between h-full'>
               {dashboardCardState.recentOrders.slice(0,5).map((item, index) => (
                 <div key={index} className='flex items-center flex-1  max-h-[75px] 2xl:max-h-[105px] mt-[0px] border-b border-stroke-soft-200  py-[4px]'>
                   <div className='flex flex-row py-[4px] px-[3px] gap-[4px] items-center rounded-[6px] border-[1px] border-stroke-soft-200  md:ml-[8px]'>

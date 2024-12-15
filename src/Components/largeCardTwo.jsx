@@ -490,7 +490,7 @@ function LargeCardTwo() {
 
         </div>
 
-        <div className="flex flex-row gap-[24px] items-center w-[100%] justify-between">
+        <div className="hidden md:flex flex-row gap-[24px] items-center w-[100%] justify-between">
         {/* Page Indicator */}
         <div>
           <h5 className={`${typography.paragraphSmall} text-center text-text-sub-500`}>

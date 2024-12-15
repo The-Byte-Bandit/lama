@@ -44,7 +44,7 @@ function Sales() {
                 
             </div>
             
-            <div className='' >
+            <div className='flex' >
               <VerticalCard
               type = "earningCategory"
               />
